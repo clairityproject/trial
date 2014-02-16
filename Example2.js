@@ -1,5 +1,5 @@
 $(document).ready(function(){
 	$('div').click(function(){
-		$(this).animate("left: += 100px")
+		$(this).fadeTo('fast',0.5)
 	});
 });
