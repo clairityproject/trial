@@ -1,0 +1,54 @@
+button{
+}
+h1{
+	text-align: left;
+}
+#background{
+	position: aboslute;
+	z-index: -1;
+	width: 99%;
+	height: 500px;
+	background-color: blue;
+}
+#header{
+    /*position: fixed;*/
+    top: 10px;
+    width: 100%;
+    height: 3em;
+    border: 1px solid  black;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 10px;
+    background-color: red;
+}
+#map{
+    height: 500px;
+    width: 300px;
+    border: 1px solid black;
+    float: right;
+    text-align: center;
+    margin: 10px;
+}
+#location{
+    width: 200px;
+    height: 100px;
+    float: left;
+    border: 1px solid white;
+    text-align: right;
+    margin: 10px;
+}
+#numbers{
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 400px;
+    height: 100px;
+    float: right;
+    position: relative;
+    right:270px;
+    margin: 10px;
+    text-align: center;
+}
+#parameters{
+    float: left;
+    width: 25%;
+}
