@@ -21,18 +21,18 @@ $(document).ready(function(){
 	}).addTo(map);
 	//Nodes
 	for(var i=0; i<sensors.length; i++){
-		L.circle([sensors[i].lat,sensors[i].lon], 16, {
+		sensors[i].circ = L.circle([sensors[i].lat,sensors[i].lon], 16, {
     		color: 'red',
     		fillColor: '#f03',
     		fillOpacity: 0.5
 		}).addTo(map);
 	};
-	sensors[0].bindPopup("Lobby 10", {closeButton: false});
+	sensors[0].circ.bindPopup(sensors[0].location, {closeButton: false});
 	function locationHover(evt){
 		evt.target.openPopup();
 	};
-	sensors[0].on('mouseover', locationHover);
-	sensors[0].on('mouseout', function(evt){
+	sensors[0].circ.on('mouseover', locationHover);
+	sensors[0].circ.on('mouseout', function(evt){
 		evt.target.closePopup();
 	});
 });
