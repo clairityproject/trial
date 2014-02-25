@@ -1,7 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>MIT Air Quality</title>
+<style>
+    p.serif{font-family:"Times New Roman",Times,serif;}
+    p.sansserif{font-family:Arial,Helvetica,sans-serif;}
+h2.pos_left
+{
+position:relative;
+left:-20px;
+}
+
+h2.pos_right
+{
+position:relative;
+left:200px;
+}
+ 
+    
+</style>
+	<title>MIT Air Quality </title>
 	<!--Leaflet Links-->
 	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
 	<script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
@@ -12,8 +29,13 @@
 	<link rel='stylesheet' href='Wireframe1.css'/>
 	<script type="text/javascript" src='Wireframe1.js'></script>
 </head>
+
+
 <body>
-    <div id="header"><h1>clAIRity</h1></div>
+	<h2 class="pos_right">This heading is moved right according to its normal position</h2>
+	<div id="header"><h1>clAIRity</h1></div>
+    <p class = "sansserif"> Check below to see the quality of your air!
+	</p>
     <!--<div id="background"></div>-->
     <div id="locationheader"><h3>Current Location:</h3></div>
     <div id="location">Location</div>
