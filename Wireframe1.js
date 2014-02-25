@@ -1,4 +1,14 @@
-var nodes = [];
+function sensor(lat,lon,location) {
+	this.lat = lat;
+	this.lon = lon;
+	this.location = location;
+}
+
+var sensors = [];
+sensors.push(new sensor(42.359765,-71.091843,"Lobby 10"));
+sensors.push(new sensor(42.359133,-71.093201,"Lobby 7"));
+var nodeLat = [42.359765, 42.359133];
+var nodeLong = [-71.091843, -71.093201];
 
 $(document).ready(function(){
 
@@ -10,19 +20,19 @@ $(document).ready(function(){
 	L.tileLayer('http://tile.cloudmade.com/440e7bdbfe0444b18cca210e9cb056c5/997/256/{z}/{x}/{y}.png', { attribution: 'Map data &copy CloudMade',
 	}).addTo(map);
 	//Nodes
-	for(var i=0; i<25; i++){
-		nodes[i] = L.circle([42.359765+i/1000,-71.091843], 16, {
+	for(var i=0; i<sensors.length; i++){
+		L.circle([sensors[i].lat,sensors[i].lon], 16, {
     		color: 'red',
     		fillColor: '#f03',
     		fillOpacity: 0.5
 		}).addTo(map);
 	};
-	nodes[0].bindPopup("Lobby 10", {closeButton: false});
+	sensors[0].bindPopup("Lobby 10", {closeButton: false});
 	function locationHover(evt){
 		evt.target.openPopup();
 	};
-	nodes[0].on('mouseover', locationHover);
-	nodes[0].on('mouseout', function(evt){
+	sensors[0].on('mouseover', locationHover);
+	sensors[0].on('mouseout', function(evt){
 		evt.target.closePopup();
 	});
 });
