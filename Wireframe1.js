@@ -29,13 +29,16 @@ var nodeLong = [-71.091843, -71.093201];
     		fillColor: '#f03',
     		fillOpacity: 0.5
 		}).addTo(map);
+		
+		sensors[i].circ.bindPopup(sensors[i].location, {closeButton: false});
+		function locationHover(evt){
+			evt.target.openPopup();
+		};
+		sensors[i].circ.on('mouseover', locationHover);
+		sensors[i].circ.on('mouseout', function(evt){
+			evt.target.closePopup();
+		});
+	
 	};
-	sensors[0].circ.bindPopup(sensors[0].location, {closeButton: false});
-	function locationHover(evt){
-		evt.target.openPopup();
-	};
-	sensors[0].circ.on('mouseover', locationHover);
-	sensors[0].circ.on('mouseout', function(evt){
-		evt.target.closePopup();
-	});
+
 });

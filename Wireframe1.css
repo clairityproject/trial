@@ -4,16 +4,27 @@ font family: 'Oregano', cursive;
 
 button{
 }
+
 h1{
 	text-align: left;
 }
+
 #background{
-	position: aboslute;
+	position: absolute;
 	z-index: -1;
 	width: 99%;
 	height: 500px;
 	background-color: red;
 }
+
+#navigation{
+	text-align: right;
+	color: #FFFFFF;
+	font-family: Helvetica;
+	font-size: 1.5em;
+	margin: 10px;
+}
+
 #header{
     /*position: fixed;*/
     top: 10px;
@@ -27,27 +38,32 @@ h1{
     font-family: Oldtown, fantasy;
     color: white;
     font-size: 20px;
-    
 }
+
+#logo{
+	float: left;
+	border-radius: 10px;
+	border: 2px solid white;
+	}
+	
 #map{
     height: 450px;
-    width: 800px;
-    border: 1px solid black;
+    width: 70%;
+    border: 2px solid white;
     border-radius: 10px;
     float: right;
-    text-align: center;
+    text-align: right;
     margin: 10px;
 }
 #locationheader{
-    width: 200px;
+    width: 25%;
     height: 100px;
     padding: 4px;
     float: left;
-    border: 5px solid white;
+    border: 3px solid white;
     text-align: left;
     margin: 10px;
-    
-    
+    border-radius: 10px;
 }
 #location{
 	width: 200px;
@@ -77,6 +93,12 @@ h1{
 }
 
 body {
-background-color: #6CDAFF;
+background-color: #1C75BC;
 text-align: center;
 }
+
+/*links*/
+a:link {color:#FFFFFF; text-decoration:none;}
+a:visited {color:#FFFFFF; text-decoration:none;}
+a:hover {color:#000000; text-decoration:none;}
+a:active {color:#FFFFFF; text-decoration:none;}
