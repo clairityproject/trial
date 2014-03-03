@@ -7,12 +7,13 @@ function sensor(lat,lon,location) {
 
 var sensors = [];
 var new_sensor;
-var i = 0;
 
 function Request() {
 	$.getJSON(serverURL, function (data) {
-			new_sensor = new sensor(data["location"]["latitude"],data["location"]["longitude"],data["location"]["name"]);
+		for(i=0; i<data["objects"].length; i++){
+			new_sensor = new sensor(data["objects"][i]["location"]["latitude"],data["objects"][i]["location"]["longitude"],data["objects"][i]["location"]["name"]);
     		sensors.push(new_sensor);
+		}
 	});
 }
 
