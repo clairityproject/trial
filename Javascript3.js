@@ -21,9 +21,6 @@ $(document).ready(function(){
 
 	Request();
 
-	sensors.push(new sensor(42.359765,-71.091843,"Lobby 10"));
-	sensors.push(new sensor(42.359133,-71.093201,"Lobby 7"));
-
     //Leaflet Map
     var sWBound = L.latLng(42.365901,-71.079440);
     var nEBound = L.latLng(42.350901,-71.107550);
