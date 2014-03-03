@@ -1,3 +1,5 @@
+//Question: How do I get them to appear when the site loads?
+
 var serverURL = "http://ec2-54-201-87-182.us-west-2.compute.amazonaws.com/api/v1/node/";
 function sensor(lat,lon,location) {
 	this.lat = lat;
