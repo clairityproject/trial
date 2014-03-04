@@ -55,6 +55,7 @@ h1{
     text-align: right;
     margin: 10px;
 }
+
 #locationheader{
     width: 25%;
     height: 100px;
@@ -102,3 +103,4 @@ a:link {color:#FFFFFF; text-decoration:none;}
 a:visited {color:#FFFFFF; text-decoration:none;}
 a:hover {color:#000000; text-decoration:none;}
 a:active {color:#FFFFFF; text-decoration:none;}
+
