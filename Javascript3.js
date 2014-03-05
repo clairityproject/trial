@@ -1,12 +1,11 @@
 //TO DO:
 //Fix timing - split into multiple threads
 //Fix map bounds
-//Fix color of nodes
 //Fix hover area
-//animate map to move to corner
 //Add PM and Last updated
 //Only get latest datapoint
 //Differentiate inside vs. outside nodes
+//Resize map when in corner
 
 var serverNodesURL = "http://ec2-54-201-87-182.us-west-2.compute.amazonaws.com/api/v1/node/";
 var serverDataURL = "http://ec2-54-201-87-182.us-west-2.compute.amazonaws.com/api/v1/datapoint/";
@@ -15,6 +14,8 @@ var sensors = [];
 var new_sensor;
 var nodesDrawn = false;
 var update_int = 15000; //milliseconds
+
+var mapBig = true;
 
 var alpha1_thresholds = [100, 500, 900, 1300, 1500];
 var alpha2_thresholds = [100, 500, 900, 1300, 1500];
@@ -122,10 +123,16 @@ $(document).ready(function(){
     //Leaflet Map
     var sWBound = L.latLng(42.365901,-71.079440);
     var nEBound = L.latLng(42.350901,-71.107550);
-	var map = L.map("map", {minZoom: 14, maxBounds:[sWBound,nEBound] });
+	var map = L.map("map", {minZoom: 14, maxBounds:[sWBound,nEBound], zoomControl: false });
 	map.setView([42.359200, -71.091950], 16);
-	L.tileLayer('http://tile.cloudmade.com/440e7bdbfe0444b18cca210e9cb056c5/997/256/{z}/{x}/{y}.png', { attribution: 'Map data &copy CloudMade',
-	}).addTo(map);
+	L.tileLayer('http://tile.cloudmade.com/440e7bdbfe0444b18cca210e9cb056c5/997/256/{z}/{x}/{y}.png', { attribution:'Map data &copy CloudMade'} ).addTo(map);
+	var zoomBar = L.control.zoom({ position: 'topleft' }).addTo(map);
+	
+	
+	map.touchZoom.disable();
+	map.dragging.disable();
+	map.doubleClickZoom.disable();
+	map.scrollWheelZoom.disable();
 
 	//Nodes
 	function drawNodes(){
@@ -133,7 +140,7 @@ $(document).ready(function(){
 			sensors[i].circ = L.circle([sensors[i].lat,sensors[i].lon], 16, {
 	    		color: 'red',
 	    		fillColor: "#f03",
-	    		fillOpacity: 0.5
+	    		fillOpacity: 0.75
 			}).addTo(map);
 
 			sensors[i].circ.number = i;
@@ -146,10 +153,38 @@ $(document).ready(function(){
 			sensors[i].circ.on('mouseout', function(evt){
 				evt.target.closePopup();
 			});
+			sensors[i].circ.on('click', function(evt){
+				moveMap();
+			});
 
 		};
 	}
 
 	var draw = setTimeout(function() {drawNodes()}, 500);
+
+	function moveMap(){
+		if(mapBig){
+			$("#map").animate({
+				height: "120px",
+				width: "120px"
+			},750);
+			mapBig = false;
+			map.attributionControl.removeAttribution('Map data &copy CloudMade');
+			map.removeControl(zoomBar);
+			//map.setView([42.359200, -71.091950], 16);
+		}
+	}
+
+	$('#map').click(function(){
+		if(!mapBig){
+			$(this).animate({
+					height: "450px",
+					width: "70%"
+				},750);
+			mapBig = true;
+			map.attributionControl.addAttribution('Map data &copy CloudMade');
+			map.addControl(zoomBar);
+		}
+	});
 
 });
