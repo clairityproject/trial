@@ -28,7 +28,7 @@
   
 
   <body>
-  
+  	<!-- Navigation Bar -->
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 	<div class="container">
 		<div class="navbar-header">
@@ -37,103 +37,198 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#">CLAIRITY</a>
+			
+		<!--	<a class="navbar-brand" href="#">CLAIRITY</a> -->
 		</div>
+		<img id="logo" src="http://www.imageurlhost.com/images/c18mcu6qxhmpgzx7rkf.jpg" alt="Clairity Logo" align=left>
 		<div class="collapse navbar-collapse">
+			
 			<ul class="nav navbar-nav">
 				<li class="active"><a href="#">Home</a></li>
 				<li><a href="#about">About</a></li>
-				<li><a href="#mitcee">MIT CEE</a></li>
+				<li><a href="#aqi">AQI</a></li>
+				<li><a href="#pollutants">Pollutants</a></li>
 				<li><a href="#contact">Contact</a></li>
+				<li><a href="https://cee.mit.edu/">MIT CEE</a></li>
 			</ul>
 		</div>
 	</div>
     </div>
     
+    <!--
     <div class="jumbotron">
 		<img id="logo" src="http://www.imageurlhost.com/images/c18mcu6qxhmpgzx7rkf.jpg" alt="Clairity Logo">
 	</div>
+	-->
+	<br><br><br>
+	<!-- MAP SECTION -->
 	
    	<div class="container">
-   	
 	<div class="row featurette">
 		<div id="map"></div>
 	</div>
-
-
-	<hr class="featurette-divider">
 	
+	<!-- ABOUT SECTION -->
+	<div id="about"></div>
+	<br><br>
+	<hr class="featurette-divider">
+	<br><br>
 	<div class="row featurette">
+		<div class="col-md-5">
+			<img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" src="http://web.mit.edu/objectivism/www/images/MIT_Alumni_Association_dome.bmp">
+		</div>
 		<div class="col-md-7">
 			<h2 class="featurette-heading">
 			MIT's Air Quality.
-				<span class="text-muted">Here we will talk about it. </span>
+				<span class="text-muted">Our Mission:</span>
 			</h2>
-			<p class="lead">
-				Here is a paragraph where we will go into more detail about our sensor network, etc.
+			<p class="lead">				
+				Assess the exposure of the MIT population to airborne pollution through the design and implementation of a distributed air quality sensor network on MIT’s campus.
 			</p>
 		</div>
-		<div class="col-md-5">
-			<img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" src="http://cui.unige.ch/tcs/random-approx/gfx/MIT_32_map.jpg">
-		</div>
+		
 	</div>
 	
-
+	<br><br>
+	<hr>
+	<br><br>
+	
+	<!-- NEXT SECTION -->
 	
 	<div class="row featurette">
 		<div class="col-md-7">
 			<h2 class="featurette-heading"> 
-			Here's another section!
+			Importance of Air Quality
 				<span class="text-muted">Maybe we will discuss the importance of air quality. </span>
 			</h2>
 			<p class="lead">
 				Maybe we will focus on the different sensors we used. Explain more in depth why we chose those, etc.
 			</p>
 		</div>
+		<div class="col-md-5">
+			<img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" src="">
+		</div>
 	</div>
 	
+	<br>
 	<hr>
+
 	
-	<div class="row-fluid">
-	<!--	<div class="span4"> -->
-			<div class="example-box">
-				<h2>PM 2.5, PM 10</h2>
-				<p>
-				Here we explain why PM is important
+	<!-- AQI SECTION -->
+	<div id="aqi"></div>
+	<br><br><br>
+	<div class="row featurette">
+		<div class="col-md-7">
+			<h2 class="featurette-heading">
+			Air Quality Index
+			</h2>
+			<h2 class="featurette-heading">
+				<span class="text-muted">How are we measuring our air quality?</span>
+				<p class="lead">
+					Similar to the <a href="http://airnow.gov/index.cfm?action=aqibasics.aqi">Air Quality Index</a> tool that the EPA uses, our MIT air quality network reports your air quality based on national air quality standards. The higher the AQI value, the greater the level of air pollution and the greater the health concern.
 				</p>
-				<p>
-					<a class="btn" href="#">Learn More</a>
-				</p>
-			</div>
-	<!--	</div>   -->
-		<div class="span4">
-			<div class="example-box">
-				<h2>PM 2.5, PM 10</h2>
-				<p>
-				Here we explain why PM is important
-				</p>
-				<p>
-					<a class="btn" href="#">Learn More</a>
-				</p>
-			</div>
+			</h2>
 		</div>
-		<div class="span4">
-			<div class="example-box">
-				<h2>PM 2.5, PM 10</h2>
-				<p>
-				Here we explain why PM is important
-				</p>
-				<p>
-					<a class="btn" href="#">Learn More</a>
-				</p>
-			</div>
+		<div class="col-md-5">
+			<img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" src="http://www.imageurlhost.com/images/xuaiym7w6vfxorbfh2o.png">
+			
 		</div>
 	</div>
 	
-	<hr class="featurette-divider">
+	<br><br>
+	
+	
+	<!-- POLLUTANTS SECTIONN -->
+	
+	<div id="pollutants"></div>
+	<hr>
+	<br><br>
 	
 
-	<div class="bs-docs-featurette">
+	<div class="row-fluid">
+		<div class="col-sm-6 col-md-4">
+			<div class="thumbnail">
+				<h2>Temperature/RH</h2>
+				<p>
+				Temperature and relative humidity 
+				</p>
+				<p>
+					<a class="btn" href="#">Learn More</a>
+				</p>
+			</div>
+		</div>
+		
+
+		<div class="col-sm-6 col-md-4">
+			<div class="thumbnail">
+				<h2>Ozone</h2>
+				<p>
+				Ozone (O3) is created by chemical reactions between nitrogen oxides and volatile organic compounds. While atmospheric ozone acts as a natural shield against harmful ultraviolet rays, ground-level ozone can be extremely harmful for our health. The main sources that cause high levels of ozone are industrial facilities, motor vehicle exhaust, and gasoline vapors. The health effects of harmful ozone include chest pain, coughing, and congestion. 
+				</p>
+				<p>
+					<a class="btn" href="#">Learn More</a>
+				</p>
+			</div>
+		</div>
+
+		<div class="col-sm-6 col-md-4">
+			<div class="thumbnail">
+				<h2>Carbon Monoxide</h2>
+				<p>
+				Carbon Monoxide (CO) is an odorless, colorless gas that is highly toxic in when encountered in high concentrations. The main contribution of CO is vehicle exhaust but other sources include fuel combustion, fires, and volcanoes. Harmful health effects of CO occur when it enters the bloodstream through the lungs and binds to hemoglobin, reducing the amount of oxygen that reaches the bodys' tissues and organs. 
+				</p>
+				<p>
+					<a class="btn" href="#">Learn More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+	
+	<div class="row-fluid">
+
+		<div class="col-sm-6 col-md-4">
+			<div class="thumbnail">
+				<h2>PM 2.5 / PM 10</h2>
+				<p>
+				Particulate matter (PM) consists of a mixture of solid and liquid droplets. Particles less than 10 micrometers are so small that they can enter the lungs, posing a serious threat. These small particles are typically divided into two categories: fine particles (<2.5µm) and coarse particles (>2.5µm and <10µm). 
+				<!--The main sources of fine particles include motor vehicles, industrial processes, and power plants. Sources of coarse particles include grinding/crushing operations, roadways, and dusty industries. Exposure to PM has been linked to aggravated conditions for those with heart or lung diseases. -->
+				</p>
+				<p>
+					<a class="btn" href="#">Learn More</a>
+				</p>
+			</div>
+		</div>
+		<div class="col-sm-6 col-md-4">
+			<div class="thumbnail">
+				<h2>Nitric Oxide</h2>
+				<p>
+				Nitric Oxide is colorless and odorless, and of the nitrogen oxides (NOx) emitted, NO is the primary pollutant. While NO is non-toxic by itself, it quickly converts to NO2 in the air. 
+				</p>
+				<p>
+					<a class="btn" href="#">Learn More</a>
+				</p>
+			</div>
+		</div>
+
+		<div class="col-sm-6 col-md-4">
+			<div class="thumbnail">
+				<h2>Nitrogen Dioxide</h2>
+				<p>
+				Nitrogen Dioxide (NO2) is strongly tied to the presence of O3 and particulate matter. The largest sources of NO2 are combustion processes, such as heating and power generation. Long-term exposure to NO2 has been linked to adverse respiratory effects. 
+				</p>
+				<p>
+					<a class="btn" href="#">Learn More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+	
+	<br><br>
+	<hr>
+	<br><br>
+
+	<!-- CONTACT SECTION -->
+	<div id="contact" class="bs-docs-featurette">
 		<div class="container">
 			<h2 class="bs-docs-featurette-title">Contact Us</h2>
 				<p class="lead">
@@ -150,7 +245,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/javascript2.js"></script>
+    <script src="javascript2.js"></script>
     
   </body>
 </html>
