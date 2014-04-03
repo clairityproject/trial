@@ -127,8 +127,7 @@ $(document).ready(function(){
 	map.setView([42.359200, -71.091950], 16);
 	L.tileLayer('http://tile.cloudmade.com/440e7bdbfe0444b18cca210e9cb056c5/997/256/{z}/{x}/{y}.png', { attribution:'Map data &copy CloudMade'} ).addTo(map);
 	var zoomBar = L.control.zoom({ position: 'topleft' }).addTo(map);
-	
-	
+
 	map.touchZoom.disable();
 	map.dragging.disable();
 	map.doubleClickZoom.disable();
@@ -153,6 +152,7 @@ $(document).ready(function(){
 			sensors[i].circ.on('mouseout', function(evt){
 				evt.target.closePopup();
 			});
+
 			sensors[i].circ.on('click', function(evt){
 				moveMap();
 			});
@@ -161,17 +161,20 @@ $(document).ready(function(){
 	}
 
 	var draw = setTimeout(function() {drawNodes()}, 500);
+	//var pan = setTimeout(function() {map.panTo([30,-60])}, 2000);
 
 	function moveMap(){
 		if(mapBig){
+			//map.setZoom(15);
 			$("#map").animate({
-				height: "120px",
-				width: "120px"
+				height: "200px",
+				width: "400px"
 			},750);
 			mapBig = false;
 			map.attributionControl.removeAttribution('Map data &copy CloudMade');
 			map.removeControl(zoomBar);
-			//map.setView([42.359200, -71.091950], 16);
+			//map.panTo([42.35300, -71.083000]);
+			//map.setZoom(15);
 		}
 	}
 
@@ -184,6 +187,7 @@ $(document).ready(function(){
 			mapBig = true;
 			map.attributionControl.addAttribution('Map data &copy CloudMade');
 			map.addControl(zoomBar);
+			map.setView([42.359200, -71.091950], 16);
 		}
 	});
 
