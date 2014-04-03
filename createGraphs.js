@@ -22,7 +22,7 @@ $(document).ready(function () {
 
 
 function redraw() {
-    var url = "http://ec2-54-201-87-182.us-west-2.compute.amazonaws.com/api/v1/datapoint/?limit=" + limit;
+    var url = "http://ec2-54-186-224-108.us-west-2.compute.amazonaws.com/api/v1/datapoint/?limit=" + limit;
     var dylos1 = [];
 	var dylos2 = [];
 	var dylos3 = [];
