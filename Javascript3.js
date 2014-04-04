@@ -7,11 +7,16 @@
 //Differentiate inside vs. outside nodes
 //Resize map when in corner
 
+<<<<<<< HEAD
 //Currently working - 4.3.14
 
 var serverNodesURL = "http://ec2-54-186-224-108.us-west-2.compute.amazonaws.com/api/v1/node/";
 var serverDataURL = "http://ec2-54-186-224-108.us-west-2.compute.amazonaws.com/api/v1/datapoint/";
 
+=======
+var serverNodesURL = "http://ec2-54-186-224-108.us-west-2.compute.amazonaws.com/api/v1/node/";
+var serverDataURL = "http://ec2-54-186-224-108.us-west-2.compute.amazonaws.com/api/v1/datapoint/";
+>>>>>>> FETCH_HEAD
 
 var sensors = [];
 var new_sensor;
