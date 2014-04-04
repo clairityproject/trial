@@ -117,18 +117,21 @@ function displayHover(i){
 	$(".temp").html("Temperature: "+String(sensors[i].temp));
 };
 
-$(document).ready(function(){
 
+$(document).ready(function(){
 	RequestNodes();
 	RequestDatapoints();
 	var reset = setInterval(function() {RequestDatapoints()}, update_int);
 
     //Leaflet Map
-    var sWBound = L.latLng(42.365901,-71.079440);
-    var nEBound = L.latLng(42.350901,-71.107550);
-	var map = L.map("map", {minZoom: 14, maxBounds:[sWBound,nEBound], zoomControl: false });
+    var googleLayer = new L.Google('ROADMAP');
+
+	var sWBound = L.latLng(42.365901,-71.079440);
+	var nEBound = L.latLng(42.350901,-71.107550);
+	var map = new L.Map('map', {minZoom: 14, maxBounds:[sWBound,nEBound], zoomControl: false, layers: [googleLayer] });
 	map.setView([42.359200, -71.091950], 16);
-	L.tileLayer('http://tile.cloudmade.com/440e7bdbfe0444b18cca210e9cb056c5/997/256/{z}/{x}/{y}.png', { attribution:'Map data &copy CloudMade'} ).addTo(map);
+
+	map.addLayer(googleLayer);
 	var zoomBar = L.control.zoom({ position: 'topleft' }).addTo(map);
 
 	map.touchZoom.disable();
@@ -193,5 +196,6 @@ $(document).ready(function(){
 			map.setView([42.359200, -71.091950], 16);
 		}
 	});
+
 
 });
