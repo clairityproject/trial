@@ -92,7 +92,7 @@ function redraw() {
 
             yAxis: {
                 title: {
-                    text: 'O3 concentration (Dobson units)'
+                    text: 'O3 concentration (ppm)'
                 }
             },
             series: [{
