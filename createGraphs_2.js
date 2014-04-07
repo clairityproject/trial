@@ -1,7 +1,6 @@
 $(document).ready(function () {
 
-//    var limit = prompt("Please enter how many values: ", 20);
-	var limit = 413;
+    var limit = prompt("Please enter how many values: ", 20);
 
     $("#make400").click(function () {
         console.log("400!");
@@ -20,6 +19,16 @@ $(document).ready(function () {
 		limit = 200;
 		redraw();
 	});
+	
+	/*$("download").click(function ()	{
+		function download(filename, text) {
+		var pom = document.createElement('a');
+		pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+		pom.setAttribute('download', '#container1');
+		pom.click();
+	}});*/
+}
+		
 
 
 function redraw() {
@@ -70,19 +79,14 @@ function redraw() {
                 }
             },
             series: [{
-				name: 'Dylos1',
+				name: 'PM-2.5',
 				data: dylos1
             },{
-				name: 'Dylos2',
-				data: dylos2
-			},{
-				name: 'Dylos3',
+				name: 'PM-10',
 				data: dylos3
-			},{
-				name: 'Dylos4',
-				data: dylos4}]
+			}]
         });
-        $('#container3').highcharts({
+        $('#container2').highcharts({
             chart: {
                 type: 'line'
             },
@@ -92,17 +96,15 @@ function redraw() {
 
             yAxis: {
                 title: {
-                    text: 'O3 concentration (Dobson units)'
+                    text: 'O3 levels (Dobson units)'
                 }
             },
             series: [{
-				name: 'O31',
+				name: 'O3',
 				data: as1
-            },{
-				name: 'O32',
-				data: as2}]
-        });    
-       $('#container2').highcharts({
+            }]
+				});
+       $('#container3').highcharts({
             chart: {
                 type: 'line'
             },
@@ -117,9 +119,28 @@ function redraw() {
             },
             series: [{
 				name: 'NO2',
-				data: as3}]    
-        });  		
+				data: as3
+            }]    
+        });  
        $('#container4').highcharts({
+            chart: {
+                type: 'line'
+            },
+            title: {
+                text: 'Nitrogen Oxide'
+            },
+
+            yAxis: {
+                title: {
+                    text: 'NO (ppb)'
+                }
+            },
+            series: [{
+				name: 'NO',
+				data: as5
+            }]    
+        });
+       $('#container5').highcharts({
             chart: {
                 type: 'line'
             },
@@ -129,30 +150,14 @@ function redraw() {
 
             yAxis: {
                 title: {
-                    text: 'CO concentration (ppm)'
+                    text: 'CO (ppb)'
                 }
             },
             series: [{
 				name: 'CO',
-				data: as5}]    
-        });  	
-       $('#container5').highcharts({
-            chart: {
-                type: 'line'
-            },
-            title: {
-                text: 'Nitric Oxide'
-            },
-
-            yAxis: {
-                title: {
-                    text: 'NO concentration (ppt)'
-                }
-            },
-            series: [{
-				name: 'NO',
-				data: as7}]    
-        }); 		}
+				data: as7
+            }]    
+        });		}
 
     // get the data
     $.getJSON(url, processJSON);
