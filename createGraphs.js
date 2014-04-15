@@ -2,6 +2,7 @@ $(document).ready(function () {
 
 //    var limit = prompt("Please enter how many values: ", 20);
 	var limit = 413;
+	
 
     $("#make400").click(function () {
         console.log("400!");
@@ -18,6 +19,22 @@ $(document).ready(function () {
 	$("#make200").click(function ()	{
 		console.log("200!");
 		limit = 200;
+		redraw();
+	});
+	
+	$("#O3value").click(function ()	{
+		console.log("03");
+		limit = 200;
+	
+	$("#NO2value").click(function ()	{
+		console.log("NO2");
+		limit = 200;
+	
+	$('button').click(function() {
+        $('.vanish').fadeOut('slow');
+
+    });
+	
 		redraw();
 	});
 
@@ -56,7 +73,7 @@ function redraw() {
 
     function processJSON(data) {
         $.each(data.objects, logger);
-        $('#container1').highcharts({
+        /*'#container1').highcharts({
             chart: {
                 type: 'line'
             },
@@ -81,13 +98,13 @@ function redraw() {
 			},{
 				name: 'Dylos4',
 				data: dylos4}]
-        });
-        $('#container3').highcharts({
+        }); */
+         $('#container3').highcharts({
             chart: {
                 type: 'line'
             },
             title: {
-                text: 'Ozone'
+                text: 'Ozone - but testing all'
             },
 
             yAxis: {
@@ -97,12 +114,15 @@ function redraw() {
             },
             series: [{
 				name: 'O31',
-				data: as1
-            },{
-				name: 'O32',
-				data: as2}]
+				data: as1	
+            }
+            ,
+            {
+			name: 'N02',
+			data: as3}]
         });    
-       $('#container2').highcharts({
+        
+      /* $('#container2').highcharts({
             chart: {
                 type: 'line'
             },
@@ -152,7 +172,7 @@ function redraw() {
             series: [{
 				name: 'NO',
 				data: as7}]    
-        }); 		}
+        }); 	*/	}
 
     // get the data
     $.getJSON(url, processJSON);
